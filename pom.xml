@@ -65,8 +65,6 @@
         <module>engine-spring</module>
         <module>engine-rest</module>
 
-        <module>examples/invoice</module>
-
         <module>engine-plugins</module>
 
         <module>distro/license-book</module>
@@ -104,8 +102,6 @@
         <module>engine-cdi</module>
         <module>engine-spring</module>
         <module>engine-rest</module>
-
-        <module>examples/invoice</module>
 
         <module>engine-plugins</module>
 
