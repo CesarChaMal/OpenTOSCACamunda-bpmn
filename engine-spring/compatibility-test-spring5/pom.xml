@@ -23,13 +23,6 @@
       <artifactId>camunda-engine-spring</artifactId>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine-spring</artifactId>
-      <classifier>tests</classifier>
-      <version>${project.version}</version>
-      <scope>test</scope>
-    </dependency>
     
     <!-- Spring 5 -->
     <dependency>
