@@ -406,66 +406,6 @@ public class HumanTaskPlanItemHandlerTest extends CmmnElementHandlerTest {
   }
 
   @Test
-  public void testTaskDefinitionCandidateUsers() {
-    // given
-    String aCandidateUsers = "mary,john,peter";
-    humanTask.setCamundaCandidateUsers(aCandidateUsers);
-
-    // when
-    CmmnActivity activity = handler.handleElement(planItem, context);
-
-    // then
-    HumanTaskActivityBehavior behavior = (HumanTaskActivityBehavior) activity.getActivityBehavior();
-    TaskDefinition taskDefinition = behavior.getTaskDefinition();
-
-    Set<Expression> candidateUserExpressions = taskDefinition.getCandidateUserIdExpressions();
-    assertEquals(3, candidateUserExpressions.size());
-
-    for (Expression candidateUserExpression : candidateUserExpressions) {
-      String candidateUser = candidateUserExpression.getExpressionText();
-      if ("mary".equals(candidateUser)) {
-        assertEquals("mary", candidateUser);
-      } else if ("john".equals(candidateUser)) {
-        assertEquals("john", candidateUser);
-      } else if ("peter".equals(candidateUser)) {
-        assertEquals("peter", candidateUser);
-      } else {
-        fail("Unexpected candidate user: " + candidateUser);
-      }
-    }
-  }
-
-  @Test
-  public void testTaskDefinitionCandidateGroups() {
-    // given
-    String aCandidateGroups = "accounting,management,backoffice";
-    humanTask.setCamundaCandidateGroups(aCandidateGroups);
-
-    // when
-    CmmnActivity activity = handler.handleElement(planItem, context);
-
-    // then
-    HumanTaskActivityBehavior behavior = (HumanTaskActivityBehavior) activity.getActivityBehavior();
-    TaskDefinition taskDefinition = behavior.getTaskDefinition();
-
-    Set<Expression> candidateGroupExpressions = taskDefinition.getCandidateGroupIdExpressions();
-    assertEquals(3, candidateGroupExpressions.size());
-
-    for (Expression candidateGroupExpression : candidateGroupExpressions) {
-      String candidateGroup = candidateGroupExpression.getExpressionText();
-      if ("accounting".equals(candidateGroup)) {
-        assertEquals("accounting", candidateGroup);
-      } else if ("management".equals(candidateGroup)) {
-        assertEquals("management", candidateGroup);
-      } else if ("backoffice".equals(candidateGroup)) {
-        assertEquals("backoffice", candidateGroup);
-      } else {
-        fail("Unexpected candidate group: " + candidateGroup);
-      }
-    }
-  }
-
-  @Test
   public void testTaskDefinitionFormKey() {
     // given
     String aFormKey = "aFormKey";
