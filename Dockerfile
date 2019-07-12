@@ -4,7 +4,7 @@ RUN rm /dev/random && ln -s /dev/urandom /dev/random
 
 WORKDIR /opt/opentosca/camunda
 COPY . /opt/opentosca/camunda
-RUN mvn install -Ptomcat,h2 -am -Dmaven.test.skip=true -s settings/maven/nexus-settings.xml -B
+RUN mvn clean install -Ptomcat,h2 -am -Dmaven.test.skip=true -s settings/maven/nexus-settings.xml -B
 
 
 FROM openjdk:8
