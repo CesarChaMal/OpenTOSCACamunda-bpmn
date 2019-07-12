@@ -46,8 +46,16 @@
         <activeByDefault>true</activeByDefault>
       </activation>
       <modules>
+	    <module>webapps/h2-webapp</module>
+	    <module>engine</module>
+        <module>engine-cdi</module>
+        <module>engine-spring</module>
+        <module>engine-rest</module>
         <module>distro/license-book</module>
         <module>distro/tomcat</module>
+		<module>database</module>
+        <module>parent</module>
+        <module>bom</module>
       </modules>
     </profile>
   </profiles>
