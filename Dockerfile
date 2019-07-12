@@ -4,8 +4,7 @@ RUN rm /dev/random && ln -s /dev/urandom /dev/random
 
 WORKDIR /opt/opentosca/camunda
 COPY . /opt/opentosca/camunda
-RUN mkdir --parents /root/.m2/; mv docker/settings.xml /root/.m2/settings.xml \
-	&& mvn clean install -Ptomcat,h2 -Dmaven.test.skip=true
+RUN mvn install -Ptomcat,h2 -am -Dmaven.test.skip=true -s settings/maven/nexus-settings.xml -B
 
 
 FROM openjdk:8
